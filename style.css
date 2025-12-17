@@ -62,7 +62,7 @@ html{
 }
 
 .call-now a:hover {
-  background: #c39a2d;
+  background: #d4af37;
 }
 
 
@@ -1182,13 +1182,13 @@ html{
 
   height: 55px;
 
-  background-color: #ff9500;
+  background-color: #d4af37;
 
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow:#ff9500;
+  box-shadow:#d4af37;
 
   z-index: 999;
   transition: transform 0.3s ease;
