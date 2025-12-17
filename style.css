@@ -8,10 +8,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 .header {
   width: 100%;
   background: #ffffff;
   border-bottom: 1px solid #eaeaea;
+  position: sticky;
+   top: 0;              
+  z-index: 9999;  
 }
 
 .header-container {
@@ -24,35 +30,121 @@ body {
   justify-content: space-between;
 }
 
+
 .logo img {
   width: 200px;
-  height: 100px;
-  object-fit: contain;
+  height: auto;
 }
 
+/* NAV DESKTOP */
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 26px;
 }
 
-.nav ul li a {
+.nav a {
   text-decoration: none;
   font-size: 16px;
   color: #555;
   font-weight: 500;
 }
-
-.nav ul li a:hover {
-  color: #000;
+.call-now a {
+  padding: 8px 18px;
+  background: #d4af37;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
 }
+
+.call-now a:hover {
+  background: #c39a2d;
+}
+
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+
+@media (max-width: 768px) {
+
+
+  .header-container {
+    flex-wrap: nowrap;
+  }
+
+
+  .menu-toggle {
+    display: flex;
+  }
+
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+  }
+
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+
+  .nav ul.show {
+    display: flex;
+  }
+
+
+  .call-item {
+    display: none;
+  }
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-dark, #333);
+  transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
 
 .hero {
   position: relative;
   width: 100%;
   min-height: 100%;
 
-  background-image: url("https://placehold.jp/1600x400.png");
+  background-image: url("./assets/banner.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -416,7 +508,7 @@ body {
   position: relative;
   width: 100%;
   padding: 120px 20px;
-  background-image: url("https://placehold.jp/1600x700.png");
+  background-image: url("./assets/ourresult.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -524,7 +616,7 @@ body {
 }
 
 .special-card {
-  min-width: 25%;
+  min-width: 33.3333%; 
   padding: 0 12px;
   box-sizing: border-box;
   position: relative;
@@ -814,7 +906,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  background-image: url("https://placehold.jp/1600x900.png");
+  background-image: url("./assets/consultation.jpg");
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1047,3 +1139,70 @@ body {
     grid-column: span 1;
   }
 }
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #25D366;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.call-btn {
+  bottom: 90px;
+
+  background-color: #ff9500;
+
+}
+
+.whatsapp-btn img {
+  width: 60%;
+  height: 60%;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+}
+
+.call-btn {
+  position: fixed;
+  bottom: 90px;
+
+  right: 20px;
+  width: 55px;
+
+  height: 55px;
+
+  background-color: #ff9500;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:#ff9500;
+
+  z-index: 999;
+  transition: transform 0.3s ease;
+
+}
+
+.call-btn img {
+  width: 50%;
+
+  height: 50%;
+  filter: brightness(0) invert(1);
+}
+
+.call-btn:hover {
+  transform: scale(1.08);
+}
+

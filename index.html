@@ -7,32 +7,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header class="header">
   <div class="header-container">
 
-    <div class="logo">
-      <img src="https://placehold.jp/200x100.png" alt="Logo" />
-    </div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<div class="logo">
+  <a href="./index.html">
+    <img src="./assets/logo.png" alt="Shri Durga Astro">
+  </a>
+</div>
 
+ 
     <nav class="nav">
-      <ul id="navMenu">
+      <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonals">Testimonials</a></li>
+        <li><a href="#contactus">Contact us</a></li>
+
+   
+        <li class="call-now">
+          <a href="tel:99999999999">Call Now</a>
+        </li>
       </ul>
     </nav>
 
   </div>
 </header>
+
+
+
+
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+</script>
+
 
 
 <script>
@@ -65,7 +79,7 @@
       <div class="hero-form">
         <h3>Book a Free Consultation</h3>
 
-        <form>
+        <form method="POST" action="https://mail.digikit.in/forms/astro/send.php">
           <input type="text" placeholder="Full Name"  required/>
           <input type="tel" placeholder="Phone Number"  maxlength="10"
       pattern="[0-9]{10}"
@@ -82,13 +96,13 @@
   </section>
 
 
-<section class="about">
+<section class="about" id="aboutus">
   <div class="about-container">
 
 
     <div class="about-image">
       <img
-        src="https://placehold.jp/600x500.png"
+        src="./assets/aboutus.jpg"
         alt="Astrologer"
       />
     </div>
@@ -138,7 +152,7 @@
   </div>
 </section>
 
-<section class="services">
+<section class="services" id="services">
   <h2 class="services-title">Our Services</h2>
 
   <div class="services-wrapper">
@@ -151,7 +165,7 @@
 
 
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/astrologyconsultation.jpg" />
           <div class="service-content">
             <h3>Astrology Consultation</h3>
             <p>
@@ -163,7 +177,7 @@
 
   
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/matchmaking.jpg" />
           <div class="service-content">
             <h3>Match Making</h3>
             <p>
@@ -179,7 +193,7 @@
       <div class="services-slide">
 
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/loveandrelationshipsolutions.jpg" />
           <div class="service-content">
             <h3>Love and Relationship Solutions</h3>
             <p>
@@ -190,7 +204,7 @@
         </div>
 
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/marriageandintercastemarriagesolutions.jpg" />
           <div class="service-content">
             <h3>Marriage and Intercaste Marriage Solutions</h3>
             <p>
@@ -205,7 +219,7 @@
       <div class="services-slide">
 
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/careerproblems.jpg" />
           <div class="service-content">
             <h3>Career and Job Problems</h3>
             <p>
@@ -216,7 +230,7 @@
         </div>
 
         <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
+          <img src="./assets/ourservices/childlessproblems.jpg" />
           <div class="service-content">
             <h3>Childless Problems</h3>
             <p>
@@ -262,7 +276,7 @@
 </script>
 
 
-<section class="results">
+<section class="results" id="results">
   <div class="results-overlay"></div>
 
   <div class="results-container">
@@ -300,29 +314,29 @@
     <div class="special-track" id="specialTrack">
 
       <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
+        <img src="./assets/specialservices/horoscopereading.jpg" />
         <div class="card-text">
-          <p class="title">Get Your Lover Back</p>
-          <span class="call">Call Now: +91 1234567890</span>
+          <p class="title">Horoscope Reading</p>
+          <span class="call">Understand your birth chart and its influence on your life. Guruji explains things in a way that is easy to follow.</span>
         </div>
       </div>
 
       <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
+        <img src="./assets/specialservices/ashtamangalaprasnam.jpg" />
         <div class="card-text">
-          <p class="title">Husband & Wife Issues</p>
-          <span class="call">Call Now: +91 1234567890</span>
+          <p class="title">Ashtamangala Prasnam</p>
+          <span class="call">A traditional method used to find hidden problems and suggest remedies. Performed with years of experience and care.</span>
         </div>
       </div>
 
       <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
+        <img src="./assets/specialservices/vastushastra.jpg" />
         <div class="card-text">
-          <p class="title">Marriage Solutions</p>
-          <span class="call">Call Now: +91 1234567890</span>
+          <p class="title">Vastu Shastra</p>
+          <span class="call">Simple Vastu guidance for homes and offices to improve harmony and bring positive energy into your space.</span>
         </div>
       </div>
-
+<!-- 
       <div class="special-card">
         <img src="https://placehold.jp/400x400.png" />
         <div class="card-text">
@@ -337,7 +351,7 @@
           <p class="title">Intercaste Love Marriage</p>
           <span class="call">Call Now: +91 1234567890</span>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
@@ -386,7 +400,7 @@
 </script>
 
 
-<section class="testimonials">
+<section class="testimonials" id="testimonals">
   <h2 class="testimonials-title">Client Testimonials</h2>
 
   <div class="testimonials-wrapper">
@@ -626,7 +640,7 @@
   }
 </script>
 
-<section class="consult-banner">
+<section class="consult-banner" >
   <div class="consult-banner-inner">
 
     <h1>Facing a problem that never seems to end?</h1>
@@ -731,7 +745,7 @@
     });
   });
 </script>
-<section class="contact-section">
+<section class="contact-section" id="contactus">
   <h2 class="contact-title">Contact Us</h2>
 
   <form class="contact-form">
@@ -756,7 +770,14 @@
   © 2025 Soham Holistic Yoga. All Rights Reserved.
 </footer>
 
+  <a href="https://wa.me/91999999999" class="whatsapp-btn" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
 
+
+    <a href="tel:+91999999999" class="call-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="Call" />
+    </a>
 
 
 </body>
