@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.ico">
+
 <title>Sree Durga Astrology | Trusted Astrologer for Life & Marriage Problems</title>
 
 <meta name="description" content="Consult Sree Durga Astrology for accurate horoscope reading, marriage solutions, career guidance and family problems. Trusted astrologer with years of experience.">
@@ -256,27 +259,74 @@
 
   </div>
 </section>
-
 <script>
-  let servicesIndex = 0;
   const servicesTrack = document.getElementById("servicesTrack");
-  const servicesSlides = document.querySelectorAll(".services-slide");
+  let servicesSlides = document.querySelectorAll(".services-slide");
+
+  let servicesIndex = 1;
+  let servicesInterval;
+  const servicesDelay = 3500;
+
+  /* 🔁 CLONE FIRST & LAST */
+  const firstClone = servicesSlides[0].cloneNode(true);
+  const lastClone = servicesSlides[servicesSlides.length - 1].cloneNode(true);
+
+  servicesTrack.appendChild(firstClone);
+  servicesTrack.insertBefore(lastClone, servicesSlides[0]);
+
+  servicesSlides = document.querySelectorAll(".services-slide");
+
+  servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
 
   function updateServices() {
-    servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
+    servicesTrack.style.transition = "transform 0.6s ease";
+    servicesTrack.style.transform =
+      `translateX(-${servicesIndex * 100}%)`;
   }
 
   function nextServices() {
-    servicesIndex = (servicesIndex + 1) % servicesSlides.length;
+    servicesIndex++;
     updateServices();
   }
 
   function prevServices() {
-    servicesIndex =
-      (servicesIndex - 1 + servicesSlides.length) % servicesSlides.length;
+    servicesIndex--;
     updateServices();
   }
+
+  servicesTrack.addEventListener("transitionend", () => {
+    if (servicesSlides[servicesIndex].isSameNode(firstClone)) {
+      servicesTrack.style.transition = "none";
+      servicesIndex = 1;
+      servicesTrack.style.transform =
+        `translateX(-${servicesIndex * 100}%)`;
+    }
+
+    if (servicesSlides[servicesIndex].isSameNode(lastClone)) {
+      servicesTrack.style.transition = "none";
+      servicesIndex = servicesSlides.length - 2;
+      servicesTrack.style.transform =
+        `translateX(-${servicesIndex * 100}%)`;
+    }
+  });
+
+  function startServicesAuto() {
+    servicesInterval = setInterval(nextServices, servicesDelay);
+  }
+
+  function stopServicesAuto() {
+    clearInterval(servicesInterval);
+  }
+
+  /* ⏸ PAUSE ON HOVER */
+  servicesTrack.addEventListener("mouseenter", stopServicesAuto);
+  servicesTrack.addEventListener("mouseleave", startServicesAuto);
+
+  startServicesAuto();
 </script>
+
+
+
 
 
 <section class="results" id="results">
@@ -365,42 +415,56 @@
 
   </div>
 </section>
-
 <script>
-  const track = document.getElementById("specialTrack");
-  const cards = document.querySelectorAll(".special-card");
-  let index = 0;
+  const specialTrack = document.getElementById("specialTrack");
+  const specialCards = document.querySelectorAll(".special-card");
+  let specialIndex = 0;
+  let specialInterval;
 
-  function visible() {
+  function visibleSpecial() {
     if (window.innerWidth <= 600) return 1;
     if (window.innerWidth <= 1024) return 2;
     return 4;
   }
 
-  function update() {
-    track.style.transform = `translateX(-${(index * 100) / visible()}%)`;
+  function updateSpecial() {
+    specialTrack.style.transform =
+      `translateX(-${(specialIndex * 100) / visibleSpecial()}%)`;
   }
 
   function next() {
-    if (index < cards.length - visible()) {
-      index++;
+    if (specialIndex < specialCards.length - visibleSpecial()) {
+      specialIndex++;
     } else {
-      index = 0;
+      specialIndex = 0;
     }
-    update();
+    updateSpecial();
   }
 
   function prev() {
-    if (index > 0) {
-      index--;
+    if (specialIndex > 0) {
+      specialIndex--;
     } else {
-      index = cards.length - visible();
+      specialIndex = specialCards.length - visibleSpecial();
     }
-    update();
+    updateSpecial();
   }
 
-  window.addEventListener("resize", update);
+  function startSpecialAuto() {
+    specialInterval = setInterval(next, 3500);
+  }
+
+  function stopSpecialAuto() {
+    clearInterval(specialInterval);
+  }
+
+  specialTrack.addEventListener("mouseenter", stopSpecialAuto);
+  specialTrack.addEventListener("mouseleave", startSpecialAuto);
+  window.addEventListener("resize", updateSpecial);
+
+  startSpecialAuto();
 </script>
+
 
 
 <section class="testimonials" id="testimonals">
@@ -489,43 +553,81 @@
 
   </div>
 </section>
-
 <script>
-  const tTrack = document.getElementById("testimonialTrack");
-  const tCards = document.querySelectorAll(".testimonial-card");
-  let tIndex = 0;
+(function () {
+  const track = document.getElementById("testimonialTrack");
+  if (!track) return;
 
-  function visibleTestimonials() {
+  let slides = Array.from(track.children);
+  const slideCount = slides.length;
+  let index = 0;
+  let auto;
+  const delay = 3000;
+
+  function visible() {
     if (window.innerWidth <= 600) return 1;
     if (window.innerWidth <= 1024) return 2;
     return 3;
   }
 
-  function updateTestimonials() {
-    tTrack.style.transform =
-      `translateX(-${(tIndex * 100) / visibleTestimonials()}%)`;
+  /* CLONE FOR INFINITE */
+  slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  slides = Array.from(track.children);
+
+  function move(animate = true) {
+    track.style.transition = animate ? "transform 0.6s ease" : "none";
+    track.style.transform =
+      `translateX(-${(index * 100) / visible()}%)`;
   }
 
-  function nextTestimonial() {
-    if (tIndex < tCards.length - visibleTestimonials()) {
-      tIndex++;
-    } else {
-      tIndex = 0;
+  function next() {
+    index++;
+    move(true);
+
+    if (index >= slideCount) {
+      setTimeout(() => {
+        index = 0;
+        move(false);
+      }, 600);
     }
-    updateTestimonials();
   }
 
-  function prevTestimonial() {
-    if (tIndex > 0) {
-      tIndex--;
-    } else {
-      tIndex = tCards.length - visibleTestimonials();
+  function prev() {
+    if (index === 0) {
+      index = slideCount;
+      move(false);
     }
-    updateTestimonials();
+    index--;
+    move(true);
   }
 
-  window.addEventListener("resize", updateTestimonials);
+  window.nextTestimonial = next;
+  window.prevTestimonial = prev;
+
+  function startAuto() {
+    auto = setInterval(next, delay);
+  }
+
+  function stopAuto() {
+    clearInterval(auto);
+  }
+
+  track.addEventListener("mouseenter", stopAuto);
+  track.addEventListener("mouseleave", startAuto);
+
+  window.addEventListener("resize", () => move(false));
+
+  move(false);
+  startAuto();
+})();
 </script>
+
+
+
 
 
 <section class="video-testimonials">
@@ -652,7 +754,7 @@
       Talk to Guruji for simple, practical and confidential guidance
     </p>
 
-    <form class="consult-form">
+    <form class="consult-form" method="POST" action="https://mail.digikit.in/forms/astro/detail.php">
       <input type="text" placeholder="Enter your name" name="name" required />
       <input type="text" placeholder="Gender" name="gender"  required />
       <input type="text" placeholder="Enter Birth Place" name="place"  required />
@@ -755,7 +857,7 @@
 <section class="contact-section" id="contactus">
   <h2 class="contact-title">Contact Us</h2>
 
-  <form class="contact-form">
+  <form class="contact-form" method="POST" action="https://mail.digikit.in/forms/astro/contact.php">
     <input type="text" placeholder="Name"   name="name" required />
 
     <input

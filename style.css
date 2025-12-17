@@ -278,7 +278,7 @@ html{
 
 .about {
   width: 100%;
-  padding: 100px 20px;
+  padding:26px 20px;
   background: #ffffff;
 }
 
@@ -656,9 +656,21 @@ html{
   transition: all 0.3s ease;
 }
 
-.special-card:hover img {
-  transform: scale(1.05);
+.special-card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 8px;
 }
+
+.special-card img {
+  transform: scale(0.96);
+  transition: transform 0.4s ease;
+}
+
+.special-card:hover img {
+  transform: scale(1) translateY(4px);
+}
+
 
 .special-card:hover .title {
   transform: translateY(-6px);
@@ -702,7 +714,7 @@ html{
   }
 }
 .testimonials {
-  padding: 90px 20px;
+  padding: 20px 20px;
   background: #ffffff;
   text-align: center;
 }
@@ -1075,7 +1087,7 @@ html{
 }
 
 .contact-section {
-  padding: 80px 20px 100px;
+  padding: 12px 20px 100px;
   background: #ffffff;
   text-align: center;
 }
@@ -1204,5 +1216,11 @@ html{
 
 .call-btn:hover {
   transform: scale(1.08);
+}
+/* Smooth animation */
+.services-track,
+.testimonials-track,
+.special-track {
+  transition: transform 0.6s ease;
 }
 
