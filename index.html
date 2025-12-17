@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sree Durga Astrology</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-container">
+  <header class="header">
+    <div class="header-container">
 
-    <div class="logo">
-      <img src="https://placehold.jp/200x100.png" alt="Logo" />
+      <div class="logo">
+        <img src="https://placehold.jp/200x100.png" alt="Logo" />
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav">
+        <ul id="navMenu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+
     </div>
-
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav class="nav">
-      <ul id="navMenu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
+  </header>
 
 
-<script>
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("show");
-  }
-</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
 
 
   <section class="hero">
@@ -47,7 +49,7 @@
 
     <div class="hero-container">
 
-     
+
       <div class="hero-content">
         <h1>
           Find Clarity<br />
@@ -61,19 +63,17 @@
         </p>
       </div>
 
-     
+
       <div class="hero-form">
         <h3>Book a Free Consultation</h3>
 
         <form>
-          <input type="text" placeholder="Full Name"  required/>
-          <input type="tel" placeholder="Phone Number"  maxlength="10"
-      pattern="[0-9]{10}"
-      oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)"
-      required />
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Service Required" required />
-          <textarea placeholder="Tell us about your requirements..." required></textarea>
+          <input type="text" placeholder="Full Name" name="name" required />
+          <input type="tel" placeholder="Phone Number" name="phone" maxlength="10" pattern="[0-9]{10}"
+            oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)" required />
+          <input type="email" placeholder="Email" name="email" required />
+          <input type="text" placeholder="Service Required" name="service" required />
+          <textarea placeholder="Tell us about your requirements..." name="message" required></textarea>
           <button type="submit">Book a Free Consultation</button>
         </form>
       </div>
@@ -82,682 +82,688 @@
   </section>
 
 
-<section class="about">
-  <div class="about-container">
+  <section class="about">
+    <div class="about-container">
 
 
-    <div class="about-image">
-      <img
-        src="https://placehold.jp/600x500.png"
-        alt="Astrologer"
-      />
-    </div>
-
- 
-    <div class="about-content">
-      <h2>About Us</h2>
-
-      <p>
-       Sree Durga Astrology is led by Pandith Vasudev Dikshith, a respected astrologer with more than 25 years of experience. He has helped people across the world find direction through simple and accurate predictions. Known for his calm guidance and honest approach, Guruji offers support for career, marriage, relationships and personal concerns.
-
-      </p>
-
-    
-      <div class="about-stats">
-        <div class="stat">
-          <h3>25+</h3>
-          <span>Years of<br />Experience</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <h3>3600+</h3>
-          <span>Trusted<br />Clients</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <h3>100%</h3>
-          <span>Privacy &<br />Confidentiality</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <h3>18+</h3>
-          <span>Countries With<br />Followers</span>
-        </div>
+      <div class="about-image">
+        <img src="https://placehold.jp/600x500.png" alt="Astrologer" />
       </div>
 
-    
-      <a href="#" class="about-btn">Call Now</a>
-    </div>
 
-  </div>
-</section>
+      <div class="about-content">
+        <h2>About Us</h2>
 
-<section class="services">
-  <h2 class="services-title">Our Services</h2>
+        <p>
+          Sree Durga Astrology is led by Pandith Vasudev Dikshith, a respected astrologer with more than 25 years of
+          experience. He has helped people across the world find direction through simple and accurate predictions.
+          Known for his calm guidance and honest approach, Guruji offers support for career, marriage, relationships and
+          personal concerns.
 
-  <div class="services-wrapper">
-
-
-    <div class="services-track" id="servicesTrack">
+        </p>
 
 
-      <div class="services-slide">
+        <div class="about-stats">
+          <div class="stat">
+            <h3>25+</h3>
+            <span>Years of<br />Experience</span>
+          </div>
 
+          <div class="divider"></div>
 
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Astrology Consultation</h3>
-            <p>
-   Get clear answers for personal, family or work related problems through simple and accurate astrology guidance.
-            </p>
-            <a href="#">Read More</a>
+          <div class="stat">
+            <h3>3600+</h3>
+            <span>Trusted<br />Clients</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="stat">
+            <h3>100%</h3>
+            <span>Privacy &<br />Confidentiality</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="stat">
+            <h3>18+</h3>
+            <span>Countries With<br />Followers</span>
           </div>
         </div>
 
-  
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Match Making</h3>
-            <p>
-             Get detailed kundali matching for marriage using traditional methods to help you make confident decisions.
-            </p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
 
-      </div>
-
-   
-      <div class="services-slide">
-
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Love and Relationship Solutions</h3>
-            <p>
-            Support for misunderstandings, breakups, family pressure and relationship issues.
-            </p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Marriage and Intercaste Marriage Solutions</h3>
-            <p>
-              Guidance for marriage delays, conflicts or family objections.
-            </p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-
-      </div>
-      
-      <div class="services-slide">
-
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Career and Job Problems</h3>
-            <p>
-         Help for job stress, lack of recognition, workplace issues or career stagnation.
-            </p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-
-        <div class="service">
-          <img src="https://placehold.jp/400x400.png" />
-          <div class="service-content">
-            <h3>Childless Problems</h3>
-            <p>
-             Suggestions and remedies for those facing challenges related to childbirth.
-
-            </p>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-
+        <a href="#" class="about-btn">Call Now</a>
       </div>
 
     </div>
+  </section>
+
+  <section class="services">
+    <h2 class="services-title">Our Services</h2>
+
+    <div class="services-wrapper">
 
 
-    <div class="services-arrows">
-      <span onclick="prevServices()">&#10094;</span>
-      <span onclick="nextServices()">&#10095;</span>
+      <div class="services-track" id="servicesTrack">
+
+
+        <div class="services-slide">
+
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Astrology Consultation</h3>
+              <p>
+                Get clear answers for personal, family or work related problems through simple and accurate astrology
+                guidance.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Match Making</h3>
+              <p>
+                Get detailed kundali matching for marriage using traditional methods to help you make confident
+                decisions.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="services-slide">
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Love and Relationship Solutions</h3>
+              <p>
+                Support for misunderstandings, breakups, family pressure and relationship issues.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Marriage and Intercaste Marriage Solutions</h3>
+              <p>
+                Guidance for marriage delays, conflicts or family objections.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="services-slide">
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Career and Job Problems</h3>
+              <p>
+                Help for job stress, lack of recognition, workplace issues or career stagnation.
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="service">
+            <img src="https://placehold.jp/400x400.png" />
+            <div class="service-content">
+              <h3>Childless Problems</h3>
+              <p>
+                Suggestions and remedies for those facing challenges related to childbirth.
+
+              </p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="services-arrows">
+        <span onclick="prevServices()">&#10094;</span>
+        <span onclick="nextServices()">&#10095;</span>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <script>
+    let servicesIndex = 0;
+    const servicesTrack = document.getElementById("servicesTrack");
+    const servicesSlides = document.querySelectorAll(".services-slide");
 
-<script>
-  let servicesIndex = 0;
-  const servicesTrack = document.getElementById("servicesTrack");
-  const servicesSlides = document.querySelectorAll(".services-slide");
+    function updateServices() {
+      servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
+    }
 
-  function updateServices() {
-    servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
-  }
+    function nextServices() {
+      servicesIndex = (servicesIndex + 1) % servicesSlides.length;
+      updateServices();
+    }
 
-  function nextServices() {
-    servicesIndex = (servicesIndex + 1) % servicesSlides.length;
-    updateServices();
-  }
-
-  function prevServices() {
-    servicesIndex =
-      (servicesIndex - 1 + servicesSlides.length) % servicesSlides.length;
-    updateServices();
-  }
-</script>
+    function prevServices() {
+      servicesIndex =
+        (servicesIndex - 1 + servicesSlides.length) % servicesSlides.length;
+      updateServices();
+    }
+  </script>
 
 
-<section class="results">
-  <div class="results-overlay"></div>
+  <section class="results">
+    <div class="results-overlay"></div>
 
-  <div class="results-container">
-    <h2 class="results-title">Our Results</h2>
+    <div class="results-container">
+      <h2 class="results-title">Our Results</h2>
 
-    <div class="results-grid">
-      <div class="result-card">
-        <h3>4000+</h3>
-        <p>Love Problems<br />Solved</p>
-      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>4000+</h3>
+          <p>Love Problems<br />Solved</p>
+        </div>
 
-      <div class="result-card">
-        <h3>3000+</h3>
-        <p>Marital Problems<br />Solved</p>
-      </div>
+        <div class="result-card">
+          <h3>3000+</h3>
+          <p>Marital Problems<br />Solved</p>
+        </div>
 
-      <div class="result-card">
-        <h3>2500+</h3>
-        <p>Divorce Problems<br />Solved</p>
-      </div>
+        <div class="result-card">
+          <h3>2500+</h3>
+          <p>Divorce Problems<br />Solved</p>
+        </div>
 
-      <div class="result-card">
-        <h3>5000+</h3>
-        <p>Financial Problems<br />Solved</p>
+        <div class="result-card">
+          <h3>5000+</h3>
+          <p>Financial Problems<br />Solved</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="special-services">
-  <h2 class="special-title">Special Services</h2>
+  <section class="special-services">
+    <h2 class="special-title">Special Services</h2>
 
-  <div class="special-wrapper">
+    <div class="special-wrapper">
 
-    <div class="special-track" id="specialTrack">
-
-      <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
-        <div class="card-text">
-          <p class="title">Get Your Lover Back</p>
-          <span class="call">Call Now: +91 1234567890</span>
-        </div>
-      </div>
-
-      <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
-        <div class="card-text">
-          <p class="title">Husband & Wife Issues</p>
-          <span class="call">Call Now: +91 1234567890</span>
-        </div>
-      </div>
-
-      <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
-        <div class="card-text">
-          <p class="title">Marriage Solutions</p>
-          <span class="call">Call Now: +91 1234567890</span>
-        </div>
-      </div>
-
-      <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
-        <div class="card-text">
-          <p class="title">Intercaste Love Marriage</p>
-          <span class="call">Call Now: +91 1234567890</span>
-        </div>
-      </div>
+      <div class="special-track" id="specialTrack">
 
         <div class="special-card">
-        <img src="https://placehold.jp/400x400.png" />
-        <div class="card-text">
-          <p class="title">Intercaste Love Marriage</p>
-          <span class="call">Call Now: +91 1234567890</span>
+          <img src="https://placehold.jp/400x400.png" />
+          <div class="card-text">
+            <p class="title">Get Your Lover Back</p>
+            <span class="call">Call Now: +91 1234567890</span>
+          </div>
         </div>
+
+        <div class="special-card">
+          <img src="https://placehold.jp/400x400.png" />
+          <div class="card-text">
+            <p class="title">Husband & Wife Issues</p>
+            <span class="call">Call Now: +91 1234567890</span>
+          </div>
+        </div>
+
+        <div class="special-card">
+          <img src="https://placehold.jp/400x400.png" />
+          <div class="card-text">
+            <p class="title">Marriage Solutions</p>
+            <span class="call">Call Now: +91 1234567890</span>
+          </div>
+        </div>
+
+        <div class="special-card">
+          <img src="https://placehold.jp/400x400.png" />
+          <div class="card-text">
+            <p class="title">Intercaste Love Marriage</p>
+            <span class="call">Call Now: +91 1234567890</span>
+          </div>
+        </div>
+
+        <div class="special-card">
+          <img src="https://placehold.jp/400x400.png" />
+          <div class="card-text">
+            <p class="title">Intercaste Love Marriage</p>
+            <span class="call">Call Now: +91 1234567890</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="special-arrows">
+        <span onclick="prev()">&#10094;</span>
+        <span onclick="next()">&#10095;</span>
       </div>
 
     </div>
+  </section>
 
-    <div class="special-arrows">
-      <span onclick="prev()">&#10094;</span>
-      <span onclick="next()">&#10095;</span>
-    </div>
+  <script>
+    const track = document.getElementById("specialTrack");
+    const cards = document.querySelectorAll(".special-card");
+    let index = 0;
 
-  </div>
-</section>
-
-<script>
-  const track = document.getElementById("specialTrack");
-  const cards = document.querySelectorAll(".special-card");
-  let index = 0;
-
-  function visible() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 4;
-  }
-
-  function update() {
-    track.style.transform = `translateX(-${(index * 100) / visible()}%)`;
-  }
-
-  function next() {
-    if (index < cards.length - visible()) {
-      index++;
-    } else {
-      index = 0;
+    function visible() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 4;
     }
-    update();
-  }
 
-  function prev() {
-    if (index > 0) {
-      index--;
-    } else {
-      index = cards.length - visible();
+    function update() {
+      track.style.transform = `translateX(-${(index * 100) / visible()}%)`;
     }
-    update();
-  }
 
-  window.addEventListener("resize", update);
-</script>
-
-
-<section class="testimonials">
-  <h2 class="testimonials-title">Client Testimonials</h2>
-
-  <div class="testimonials-wrapper">
-
-    <div class="testimonials-track" id="testimonialTrack">
-
-      <div class="testimonial-card">
-        <div class="testimonial-inner">
-          <div class="quote">“</div>
-          <p>
-           “I was going through a really hard phase in my relationship and felt stuck. Speaking to Guruji felt like talking to someone who listened and understood everything. His guidance helped me a lot and things began to get better. Things are much better now.”
-
-          </p>
-          <div class="client">
-            <img src="https://placehold.jp/100x100.png" />
-            <span>Client Name</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-inner">
-          <div class="quote">“</div>
-          <p>
-     “We were having constant arguments at home and nothing was changing. Guruji did not rush me or scare me. He explained things patiently and suggested simple remedies. Within months, the tension reduced and my family became more open.”
-
-          </p>
-          <div class="client">
-            <img src="https://placehold.jp/100x100.png" />
-            <span>Client Name</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-inner">
-          <div class="quote">“</div>
-          <p>
-      
-“I was unhappy at work and felt powerless despite trying my best. After my consultation with Guruji, I understood why things felt blocked. The advice was practical and easy to follow. I gained confidence and soon after, I saw real changes at my workplace.”
-
-          </p>
-          <div class="client">
-            <img src="https://placehold.jp/100x100.png" />
-            <span>Client Name</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-inner">
-          <div class="quote">“</div>
-          <p>
-         “My parents and I were unsure about a marriage proposal and needed clarity. The kundali matching was explained in a way we could all understand. No complicated words. It helped us take a confident decision.”
-
-          </p>
-          <div class="client">
-            <img src="https://placehold.jp/100x100.png" />
-            <span>Client Name</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-inner">
-          <div class="quote">“</div>
-          <p>
-          “We consulted Guruji for horoscope reading and Vastu advice for our new home. The suggestions were simple and made sense. There was no forcing or fear. The house feels more peaceful now and overall, life feels more balanced.”
-          </p>
-          <div class="client">
-            <img src="https://placehold.jp/100x100.png" />
-            <span>Client Name</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="testimonial-arrows">
-      <span onclick="prevTestimonial()">&#10094;</span>
-      <span onclick="nextTestimonial()">&#10095;</span>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  const tTrack = document.getElementById("testimonialTrack");
-  const tCards = document.querySelectorAll(".testimonial-card");
-  let tIndex = 0;
-
-  function visibleTestimonials() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-  }
-
-  function updateTestimonials() {
-    tTrack.style.transform =
-      `translateX(-${(tIndex * 100) / visibleTestimonials()}%)`;
-  }
-
-  function nextTestimonial() {
-    if (tIndex < tCards.length - visibleTestimonials()) {
-      tIndex++;
-    } else {
-      tIndex = 0;
+    function next() {
+      if (index < cards.length - visible()) {
+        index++;
+      } else {
+        index = 0;
+      }
+      update();
     }
-    updateTestimonials();
-  }
 
-  function prevTestimonial() {
-    if (tIndex > 0) {
-      tIndex--;
-    } else {
-      tIndex = tCards.length - visibleTestimonials();
+    function prev() {
+      if (index > 0) {
+        index--;
+      } else {
+        index = cards.length - visible();
+      }
+      update();
     }
-    updateTestimonials();
-  }
 
-  window.addEventListener("resize", updateTestimonials);
-</script>
+    window.addEventListener("resize", update);
+  </script>
 
 
-<section class="video-testimonials">
-  <h2 class="video-title">Client Video Testimonials</h2>
+  <section class="testimonials">
+    <h2 class="testimonials-title">Client Testimonials</h2>
 
-  <div class="video-wrapper">
+    <div class="testimonials-wrapper">
 
-    <div class="video-track" id="videoTrack">
+      <div class="testimonials-track" id="testimonialTrack">
 
-  
-      <div class="video-page">
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="quote">“</div>
+            <p>
+              “I was going through a really hard phase in my relationship and felt stuck. Speaking to Guruji felt like
+              talking to someone who listened and understood everything. His guidance helped me a lot and things began
+              to get better. Things are much better now.”
+
+            </p>
+            <div class="client">
+              <img src="https://placehold.jp/100x100.png" />
+              <span>Client Name</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="quote">“</div>
+            <p>
+              “We were having constant arguments at home and nothing was changing. Guruji did not rush me or scare me.
+              He explained things patiently and suggested simple remedies. Within months, the tension reduced and my
+              family became more open.”
+
+            </p>
+            <div class="client">
+              <img src="https://placehold.jp/100x100.png" />
+              <span>Client Name</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="quote">“</div>
+            <p>
+
+              “I was unhappy at work and felt powerless despite trying my best. After my consultation with Guruji, I
+              understood why things felt blocked. The advice was practical and easy to follow. I gained confidence and
+              soon after, I saw real changes at my workplace.”
+
+            </p>
+            <div class="client">
+              <img src="https://placehold.jp/100x100.png" />
+              <span>Client Name</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="quote">“</div>
+            <p>
+              “My parents and I were unsure about a marriage proposal and needed clarity. The kundali matching was
+              explained in a way we could all understand. No complicated words. It helped us take a confident decision.”
+
+            </p>
+            <div class="client">
+              <img src="https://placehold.jp/100x100.png" />
+              <span>Client Name</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="quote">“</div>
+            <p>
+              “We consulted Guruji for horoscope reading and Vastu advice for our new home. The suggestions were simple
+              and made sense. There was no forcing or fear. The house feels more peaceful now and overall, life feels
+              more balanced.”
+            </p>
+            <div class="client">
+              <img src="https://placehold.jp/100x100.png" />
+              <span>Client Name</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+      </div>
+
+      <div class="testimonial-arrows">
+        <span onclick="prevTestimonial()">&#10094;</span>
+        <span onclick="nextTestimonial()">&#10095;</span>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const tTrack = document.getElementById("testimonialTrack");
+    const tCards = document.querySelectorAll(".testimonial-card");
+    let tIndex = 0;
+
+    function visibleTestimonials() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function updateTestimonials() {
+      tTrack.style.transform =
+        `translateX(-${(tIndex * 100) / visibleTestimonials()}%)`;
+    }
+
+    function nextTestimonial() {
+      if (tIndex < tCards.length - visibleTestimonials()) {
+        tIndex++;
+      } else {
+        tIndex = 0;
+      }
+      updateTestimonials();
+    }
+
+    function prevTestimonial() {
+      if (tIndex > 0) {
+        tIndex--;
+      } else {
+        tIndex = tCards.length - visibleTestimonials();
+      }
+      updateTestimonials();
+    }
+
+    window.addEventListener("resize", updateTestimonials);
+  </script>
+
+
+  <section class="video-testimonials">
+    <h2 class="video-title">Client Video Testimonials</h2>
+
+    <div class="video-wrapper">
+
+      <div class="video-track" id="videoTrack">
+
+
+        <div class="video-page">
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+        </div>
+
+
+        <div class="video-page">
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+
+          <div class="video-card">
+            <img src="https://placehold.jp/500x300.png" />
+            <div class="play-btn">▶</div>
+            <span class="name">Client Name</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="video-arrows">
+        <span onclick="prevVideo()">&#10094;</span>
+        <span onclick="nextVideo()">&#10095;</span>
+      </div>
+
+    </div>
+  </section>
+  <script>
+    const vTrack = document.getElementById("videoTrack");
+    const pages = document.querySelectorAll(".video-page");
+    let vIndex = 0;
+
+    function updateVideo() {
+      vTrack.style.transform = `translateX(-${vIndex * 100}%)`;
+    }
+
+    function nextVideo() {
+      vIndex = (vIndex + 1) % pages.length;
+      updateVideo();
+    }
+
+    function prevVideo() {
+      vIndex = (vIndex - 1 + pages.length) % pages.length;
+      updateVideo();
+    }
+  </script>
+
+  <section class="consult-banner">
+    <div class="consult-banner-inner">
+
+      <h1>Facing a problem that never seems to end?</h1>
+
+      <p>
+        Talk to Guruji for simple, practical and confidential guidance
+      </p>
+
+      <form class="consult-form">
+        <input type="text" placeholder="Enter your name" />
+        <input type="text" placeholder="Gender" />
+        <input type="text" placeholder="Enter Birth Place" />
+        <input type="date" />
+        <input type="time" />
+        <button type="submit">Book Your Consultation Today</button>
+      </form>
+
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>How accurate are the predictions</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24">
+            <path d="M6 15l6-6 6 6" />
+          </svg>
+        </div>
+        <div class="faq-answer">
+          Guruji uses traditional astrology methods and his long experience to give clear
+          and honest predictions. Many clients have seen positive changes after following
+          the guidance.
         </div>
       </div>
 
-    
-      <div class="video-page">
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Are my details kept private</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
-
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="faq-answer">
+          Yes. All personal information and discussions are kept completely confidential.
         </div>
+      </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do I need to meet in person</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
-
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+        <div class="faq-answer">
+          You can visit the centre, call or book an online consultation based on your
+          convenience.
         </div>
+      </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What kind of problems can I discuss</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
+        <div class="faq-answer">
+          You can speak about love, marriage, family issues, job stress, business concerns,
+          health worries or any personal matter.
+        </div>
+      </div>
 
-        <div class="video-card">
-          <img src="https://placehold.jp/500x300.png" />
-          <div class="play-btn">▶</div>
-          <span class="name">Client Name</span>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How soon can I get an appointment</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+        <div class="faq-answer">
+          Appointments are taken throughout the day. You can call the number or fill the
+          form to get a slot quickly.
         </div>
       </div>
 
     </div>
+  </section>
 
-    
-    <div class="video-arrows">
-      <span onclick="prevVideo()">&#10094;</span>
-      <span onclick="nextVideo()">&#10095;</span>
-    </div>
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
 
-  </div>
-</section>
-<script>
-  const vTrack = document.getElementById("videoTrack");
-  const pages = document.querySelectorAll(".video-page");
-  let vIndex = 0;
-
-  function updateVideo() {
-    vTrack.style.transform = `translateX(-${vIndex * 100}%)`;
-  }
-
-  function nextVideo() {
-    vIndex = (vIndex + 1) % pages.length;
-    updateVideo();
-  }
-
-  function prevVideo() {
-    vIndex = (vIndex - 1 + pages.length) % pages.length;
-    updateVideo();
-  }
-</script>
-
-<section class="consult-banner">
-  <div class="consult-banner-inner">
-
-    <h1>Facing a problem that never seems to end?</h1>
-
-    <p>
-      Talk to Guruji for simple, practical and confidential guidance
-    </p>
-
-    <form class="consult-form">
-      <input type="text" placeholder="Enter your name" />
-      <input type="text" placeholder="Gender" />
-      <input type="text" placeholder="Enter Birth Place" />
-      <input type="date" />
-      <input type="time" />
-      <button type="submit">Book Your Consultation Today</button>
-    </form>
-
-  </div>
-</section>
-<section class="faq-section">
-  <h2 class="faq-title">Frequently Asked Questions</h2>
-
-  <div class="faq-container">
-
-    <div class="faq-item active">
-      <div class="faq-question">
-        <span>How accurate are the predictions</span>
-        <svg class="faq-arrow" viewBox="0 0 24 24">
-          <path d="M6 15l6-6 6 6" />
-        </svg>
-      </div>
-      <div class="faq-answer">
-        Guruji uses traditional astrology methods and his long experience to give clear
-        and honest predictions. Many clients have seen positive changes after following
-        the guidance.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>Are my details kept private</span>
-        <svg class="faq-arrow" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </div>
-      <div class="faq-answer">
-        Yes. All personal information and discussions are kept completely confidential.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>Do I need to meet in person</span>
-        <svg class="faq-arrow" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </div>
-      <div class="faq-answer">
-        You can visit the centre, call or book an online consultation based on your
-        convenience.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>What kind of problems can I discuss</span>
-        <svg class="faq-arrow" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </div>
-      <div class="faq-answer">
-        You can speak about love, marriage, family issues, job stress, business concerns,
-        health worries or any personal matter.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span>How soon can I get an appointment</span>
-        <svg class="faq-arrow" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </div>
-      <div class="faq-answer">
-        Appointments are taken throughout the day. You can call the number or fill the
-        form to get a slot quickly.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach(item => {
-    item.addEventListener("click", () => {
-      faqItems.forEach(i => {
-        if (i !== item) i.classList.remove("active");
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        faqItems.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+        item.classList.toggle("active");
       });
-      item.classList.toggle("active");
     });
-  });
-</script>
-<section class="contact-section">
-  <h2 class="contact-title">Contact Us</h2>
+  </script>
+  <section class="contact-section">
+    <h2 class="contact-title">Contact Us</h2>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Name" required />
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required />
 
-    <input
-      type="tel"
-      placeholder="Phone"
-      maxlength="10"
-      pattern="[0-9]{10}"
-      oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)"
-      required
-    />
+      <input type="tel" placeholder="Phone" maxlength="10" pattern="[0-9]{10}"
+        oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)" required />
 
-    <input type="email" placeholder="Email" required />
+      <input type="email" placeholder="Email" required />
 
-    <button type="submit">Submit</button>
-  </form>
-</section>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-<footer class="footer-bar">
-  © 2025 Soham Holistic Yoga. All Rights Reserved.
-</footer>
+  <footer class="footer-bar">
+    © 2025 Soham Holistic Yoga. All Rights Reserved.
+  </footer>
 
 
 
 
 </body>
+
 </html>
