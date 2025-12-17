@@ -50,10 +50,9 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 
-
-  background-image: url("https://placehold.jp/1600x600.png");
+  background-image: url("https://placehold.jp/1600x400.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,7 +83,6 @@ body {
   gap: 60px;
 }
 
-
 .hero-content {
   max-width: 520px;
   color: #ffffff;
@@ -102,7 +100,6 @@ body {
   line-height: 1.7;
   color: #e5e5e5;
 }
-
 
 .hero-form {
   width: 380px;
@@ -156,7 +153,6 @@ body {
   background: #c39a2d;
 }
 
-
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -188,7 +184,6 @@ body {
   }
 }
 
-
 .about {
   width: 100%;
   padding: 100px 20px;
@@ -204,14 +199,12 @@ body {
   gap: 60px;
 }
 
-
 .about-image img {
   width: 100%;
   max-width: 520px;
   border-radius: 14px;
   object-fit: cover;
 }
-
 
 .about-content {
   max-width: 560px;
@@ -229,7 +222,6 @@ body {
   color: #555;
   margin-bottom: 30px;
 }
-
 
 .about-stats {
   display: flex;
@@ -257,7 +249,6 @@ body {
   background: #d4af37;
 }
 
-
 .about-btn {
   display: inline-block;
   padding: 12px 28px;
@@ -272,7 +263,6 @@ body {
 .about-btn:hover {
   background: #c39a2d;
 }
-
 
 @media (max-width: 768px) {
   .about {
@@ -302,9 +292,6 @@ body {
   }
 }
 
-
-
-
 .services {
   padding: 100px 20px;
   text-align: center;
@@ -324,7 +311,6 @@ body {
   position: relative;
 }
 
-
 .services-track {
   display: flex;
   transition: transform 0.6s ease;
@@ -337,35 +323,31 @@ body {
   gap: 60px;
 }
 
-
 .service {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-
 .service img {
-  width: 500px;
+  width: 400px;
   height: 400px;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 2;
 }
 
-
 .service-content {
   background: #eef5e6;
-  padding: 28px 36px;         
+  padding: 28px 36px;
   border-radius: 16px;
-  max-width: 460px;           
-  margin-left: -25px;         
+  max-width: 460px;
+  margin-left: -25px;
   z-index: 1;
   text-align: left;
 }
-
 
 .service-content h3 {
   font-size: 21px;
@@ -379,7 +361,6 @@ body {
   margin-bottom: 18px;
 }
 
-
 .service-content a {
   display: inline-block;
   background: #d4af37;
@@ -389,7 +370,6 @@ body {
   font-size: 14px;
   text-decoration: none;
 }
-
 
 .services-arrows {
   display: flex;
@@ -403,8 +383,6 @@ body {
   color: #d4af37;
   cursor: pointer;
 }
-
-
 
 @media (max-width: 768px) {
   .services-title {
@@ -427,14 +405,12 @@ body {
   }
 
   .service-content {
-    margin-left: 0;          
-    margin-top: -20px;     
+    margin-left: 0;
+    margin-top: -20px;
     max-width: 100%;
     text-align: left;
   }
 }
-
-
 
 .results {
   position: relative;
@@ -446,14 +422,12 @@ body {
   background-repeat: no-repeat;
 }
 
-
 .results-overlay {
   position: absolute;
   inset: 0;
-  background:transparent;
+  background: transparent;
   z-index: 1;
 }
-
 
 .results-container {
   position: relative;
@@ -470,13 +444,11 @@ body {
   margin-bottom: 60px;
 }
 
-
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-
 
 .result-card {
   background: rgba(0, 0, 0, 0.55);
@@ -497,8 +469,6 @@ body {
   line-height: 1.6;
   color: #ffffff;
 }
-
-
 
 @media (max-width: 1024px) {
   .results-grid {
@@ -542,7 +512,6 @@ body {
   margin-bottom: 60px;
 }
 
-
 .special-wrapper {
   max-width: 1400px;
   margin: 0 auto;
@@ -554,14 +523,12 @@ body {
   transition: transform 0.6s ease;
 }
 
-
 .special-card {
   min-width: 25%;
   padding: 0 12px;
   box-sizing: border-box;
   position: relative;
 }
-
 
 .special-card img {
   width: 100%;
@@ -579,14 +546,12 @@ body {
   text-align: center;
 }
 
-
 .card-text .title {
   color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   transition: transform 0.3s ease;
 }
-
 
 .card-text .call {
   display: block;
@@ -599,9 +564,8 @@ body {
   transition: all 0.3s ease;
 }
 
-
 .special-card:hover img {
-  transform: scale(1.05);   
+  transform: scale(1.05);
 }
 
 .special-card:hover .title {
@@ -612,7 +576,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .special-arrows {
   display: flex;
@@ -626,7 +589,6 @@ body {
   color: #d4af37;
   cursor: pointer;
 }
-
 
 @media (max-width: 1024px) {
   .special-card {
@@ -670,18 +632,16 @@ body {
   transition: transform 0.6s ease;
 }
 
-
 .testimonial-card {
   min-width: 33.33%;
-  padding: 0 15px;          
+  padding: 0 15px;
   box-sizing: border-box;
 }
-
 
 .testimonial-inner {
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 30px;
   text-align: left;
   height: 100%;
@@ -732,7 +692,6 @@ body {
   cursor: pointer;
 }
 
-
 @media (max-width: 1024px) {
   .testimonial-card {
     min-width: 50%;
@@ -767,12 +726,10 @@ body {
   overflow: hidden;
 }
 
-
 .video-track {
   display: flex;
   transition: transform 0.6s ease;
 }
-
 
 .video-page {
   min-width: 100%;
@@ -780,7 +737,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-
 
 .video-card {
   position: relative;
@@ -794,7 +750,6 @@ body {
   object-fit: cover;
 }
 
-
 .play-btn {
   position: absolute;
   top: 50%;
@@ -802,7 +757,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: 48px;
   color: #ffffff;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -810,7 +765,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 
 .name {
   position: absolute;
@@ -822,7 +776,6 @@ body {
   font-size: 13px;
   border-radius: 20px;
 }
-
 
 .video-arrows {
   display: flex;
@@ -836,7 +789,6 @@ body {
   color: #d4af37;
   cursor: pointer;
 }
-
 
 @media (max-width: 1024px) {
   .video-page {
@@ -858,13 +810,9 @@ body {
   }
 }
 
-
-
-
 .consult-banner {
   width: 100%;
   min-height: 100vh;
-
 
   background-image: url("https://placehold.jp/1600x900.png");
   background-size: cover;
@@ -876,12 +824,10 @@ body {
   padding: 80px 20px;
 }
 
-
 .consult-banner-inner {
   max-width: 600px;
   margin-left: 80px;
 }
-
 
 .consult-banner-inner h1 {
   font-size: 42px;
@@ -890,20 +836,17 @@ body {
   margin-bottom: 14px;
 }
 
-
 .consult-banner-inner p {
   font-size: 16px;
   color: #000;
   margin-bottom: 30px;
 }
 
-
 .consult-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-
 
 .consult-form input {
   padding: 14px 16px;
@@ -912,7 +855,6 @@ body {
   font-size: 14px;
   outline: none;
 }
-
 
 .consult-form button {
   grid-column: span 2;
@@ -925,8 +867,6 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-
-
 
 @media (max-width: 900px) {
   .consult-banner {
@@ -971,17 +911,15 @@ body {
   margin: 0 auto;
 }
 
-
 .faq-item {
   background: #ffffff;
   border-radius: 16px;
   margin-bottom: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   overflow: hidden;
   transition: background 0.3s ease;
 }
-
 
 .faq-question {
   display: flex;
@@ -993,7 +931,6 @@ body {
   color: #333;
 }
 
-
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -1003,7 +940,6 @@ body {
   color: #ffffff;
   transition: max-height 0.4s ease, padding 0.4s ease;
 }
-
 
 .faq-item.active {
   background: #8bc34a;
@@ -1031,7 +967,6 @@ body {
   transform: rotate(180deg);
 }
 
-
 @media (max-width: 600px) {
   .faq-title {
     font-size: 30px;
@@ -1047,7 +982,6 @@ body {
   }
 }
 
-
 .contact-section {
   padding: 80px 20px 100px;
   background: #ffffff;
@@ -1060,7 +994,6 @@ body {
   margin-bottom: 50px;
 }
 
-
 .contact-form {
   max-width: 1100px;
   margin: 0 auto;
@@ -1070,7 +1003,6 @@ body {
   align-items: center;
 }
 
-
 .contact-form input {
   background: #e6e6e6;
   border: none;
@@ -1079,7 +1011,6 @@ body {
   font-size: 14px;
   outline: none;
 }
-
 
 .contact-form button {
   grid-column: span 3;
@@ -1095,8 +1026,6 @@ body {
   justify-self: center;
 }
 
-
-
 .footer-bar {
   background: #d4af37;
   color: #ffffff;
@@ -1104,8 +1033,6 @@ body {
   padding: 18px 10px;
   font-size: 14px;
 }
-
-
 
 @media (max-width: 768px) {
   .contact-title {
@@ -1120,4 +1047,3 @@ body {
     grid-column: span 1;
   }
 }
-
