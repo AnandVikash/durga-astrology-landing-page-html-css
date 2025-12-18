@@ -1218,3 +1218,14 @@ html {
     display: block;
   }
 }
+.services-track,
+.special-track,
+.testimonials-track {
+  cursor: grab;
+}
+
+.services-track:active,
+.special-track:active,
+.testimonials-track:active {
+  cursor: grabbing;
+}

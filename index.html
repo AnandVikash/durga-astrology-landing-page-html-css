@@ -156,7 +156,7 @@
 
 
           <div class="service">
-            <img src="./assets/ourservices/astrologyconsultation.jpg" />
+            <img src="./assets/ourservices/astrologyconsultation1.jpg" />
             <div class="service-content">
               <h3>Astrology Consultation</h3>
               <p>
@@ -248,69 +248,73 @@
   </section>
   <script>
     const servicesTrack = document.getElementById("servicesTrack");
-    let servicesSlides = document.querySelectorAll(".services-slide");
+    let slides = document.querySelectorAll(".services-slide");
 
-    let servicesIndex = 1;
-    let servicesInterval;
-    const servicesDelay = 3500;
+    let index = 1;
+    let interval;
+    const delay = 3500;
+    let isTransitioning = false;
 
-    /* 🔁 CLONE FIRST & LAST */
-    const firstClone = servicesSlides[0].cloneNode(true);
-    const lastClone = servicesSlides[servicesSlides.length - 1].cloneNode(true);
+    // Clone slides
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
 
     servicesTrack.appendChild(firstClone);
-    servicesTrack.insertBefore(lastClone, servicesSlides[0]);
+    servicesTrack.insertBefore(lastClone, slides[0]);
 
-    servicesSlides = document.querySelectorAll(".services-slide");
+    slides = document.querySelectorAll(".services-slide");
 
-    servicesTrack.style.transform = `translateX(-${servicesIndex * 100}%)`;
+    servicesTrack.style.transform = `translateX(-100%)`;
 
-    function updateServices() {
+    function move() {
+      if (isTransitioning) return;
+      isTransitioning = true;
       servicesTrack.style.transition = "transform 0.6s ease";
-      servicesTrack.style.transform =
-        `translateX(-${servicesIndex * 100}%)`;
+      servicesTrack.style.transform = `translateX(-${index * 100}%)`;
     }
 
     function nextServices() {
-      servicesIndex++;
-      updateServices();
+      if (index >= slides.length - 1) return;
+      index++;
+      move();
     }
 
     function prevServices() {
-      servicesIndex--;
-      updateServices();
+      if (index <= 0) return;
+      index--;
+      move();
     }
 
     servicesTrack.addEventListener("transitionend", () => {
-      if (servicesSlides[servicesIndex].isSameNode(firstClone)) {
+      isTransitioning = false;
+
+      if (slides[index] === firstClone) {
         servicesTrack.style.transition = "none";
-        servicesIndex = 1;
-        servicesTrack.style.transform =
-          `translateX(-${servicesIndex * 100}%)`;
+        index = 1;
+        servicesTrack.style.transform = `translateX(-${index * 100}%)`;
       }
 
-      if (servicesSlides[servicesIndex].isSameNode(lastClone)) {
+      if (slides[index] === lastClone) {
         servicesTrack.style.transition = "none";
-        servicesIndex = servicesSlides.length - 2;
-        servicesTrack.style.transform =
-          `translateX(-${servicesIndex * 100}%)`;
+        index = slides.length - 2;
+        servicesTrack.style.transform = `translateX(-${index * 100}%)`;
       }
     });
 
-    function startServicesAuto() {
-      servicesInterval = setInterval(nextServices, servicesDelay);
+    function startAuto() {
+      interval = setInterval(nextServices, delay);
     }
 
-    function stopServicesAuto() {
-      clearInterval(servicesInterval);
+    function stopAuto() {
+      clearInterval(interval);
     }
 
-    /* ⏸ PAUSE ON HOVER */
-    servicesTrack.addEventListener("mouseenter", stopServicesAuto);
-    servicesTrack.addEventListener("mouseleave", startServicesAuto);
+    servicesTrack.addEventListener("mouseenter", stopAuto);
+    servicesTrack.addEventListener("mouseleave", startAuto);
 
-    startServicesAuto();
+    startAuto();
   </script>
+
 
 
 
@@ -900,6 +904,59 @@
         navMenu.classList.remove("show");
       });
     });
+  </script>
+  <script>
+    function enableSwipe(track, nextFn, prevFn) {
+      let startX = 0;
+      let isDown = false;
+
+      track.style.cursor = "grab";
+
+      track.addEventListener("mousedown", e => {
+        isDown = true;
+        startX = e.clientX;
+        track.style.cursor = "grabbing";
+      });
+
+      window.addEventListener("mouseup", e => {
+        if (!isDown) return;
+        const diff = e.clientX - startX;
+        if (diff < -50) nextFn();
+        if (diff > 50) prevFn();
+        isDown = false;
+        track.style.cursor = "grab";
+      });
+
+      // Touch support
+      track.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+      });
+
+      track.addEventListener("touchend", e => {
+        const diff = e.changedTouches[0].clientX - startX;
+        if (diff < -50) nextFn();
+        if (diff > 50) prevFn();
+      });
+    }
+
+    // ENABLE SWIPE
+    enableSwipe(
+      document.getElementById("servicesTrack"),
+      nextServices,
+      prevServices
+    );
+
+    enableSwipe(
+      document.getElementById("specialTrack"),
+      next,
+      prev
+    );
+
+    enableSwipe(
+      document.getElementById("testimonialTrack"),
+      nextTestimonial,
+      prevTestimonial
+    );
   </script>
 
 
