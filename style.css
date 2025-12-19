@@ -170,7 +170,74 @@ html {
   background: #c39a2d;
 }
 
+/* mobile from start */
+
+.mobile form {
+  display: none;
+}
+
+.hero-form-section {
+  width: 95%;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  margin-top: 30px;
+  display: none;
+}
+
+.hero-form-section h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-form-section input,
+.hero-form-section textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #eeeeee;
+  font-size: 14px;
+  outline: none;
+}
+
+.hero-form-section textarea {
+  resize: none;
+  height: 90px;
+}
+
+.hero-form-section button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #d4af37;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-form-section button:hover {
+  background: #c39a2d;
+}
+/* mobile form end */
+
 @media (max-width: 768px) {
+  .call-now {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .header-container {
     flex-direction: row; /* keep logo + toggle in one row */
     align-items: center;
@@ -199,6 +266,10 @@ html {
   .hero-form {
     width: 100%;
     max-width: 420px;
+    display: none;
+  }
+  .hero-form-section {
+    display: block;
   }
 }
 
@@ -285,7 +356,7 @@ html {
 
 @media (max-width: 768px) {
   .about {
-    padding: 70px 20px;
+    margin-top: 30px;
   }
 
   .about-container {
