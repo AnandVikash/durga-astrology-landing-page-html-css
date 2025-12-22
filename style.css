@@ -400,17 +400,25 @@ html {
   overflow: hidden;
   position: relative;
 }
+/* === SERVICES AS CARDS (KEEP LAYOUT SAME) === */
 
 .services-track {
-  display: flex;
-  transition: transform 0.6s ease;
+  transform: none !important;
 }
 
 .services-slide {
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
+  min-width: auto;
+  width: 100%;
+}
+
+/* Each card stays exactly same */
+.service {
+  flex: 0 0 auto;
+}
+
+/* Hide arrows */
+.services-arrows {
+  display: none;
 }
 
 .service {
@@ -765,6 +773,7 @@ html {
   padding: 20px 20px;
   background: #ffffff;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .testimonials-title {
@@ -1186,7 +1195,7 @@ html {
 }
 
 .footer-bar h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
   text-align: center;
@@ -1204,13 +1213,15 @@ html {
 .footer-col {
   flex: 1;
   text-align: center;
+  margin-bottom: 10px;
 }
 .footer-col a {
   text-decoration: none;
+  font-size: 16px;
   color: #ffffff;
 }
 .footer-col a img {
-  margin-right: 5px;
+  /* margin-right: 2px; */
   vertical-align: middle;
   width: 20px;
   height: 20px;
@@ -1433,4 +1444,59 @@ html {
 .special-track:active,
 .testimonials-track:active {
   cursor: grabbing;
+}
+
+/* === DISABLE SPECIAL SERVICES SLIDER === */
+.special-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  transform: none !important;
+}
+
+.special-card {
+  min-width: unset;
+}
+
+.special-arrows {
+  display: none;
+}
+/* === DISABLE TESTIMONIAL SLIDER === */
+.testimonials-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  transform: none !important;
+}
+
+.testimonial-card {
+  min-width: unset;
+}
+
+.testimonial-arrows {
+  display: none;
+}
+/* === OUR SERVICES : ONE CARD BELOW THE OTHER === */
+
+.services-track {
+  display: flex;
+  flex-direction: column; /* 🔑 vertical stacking */
+  gap: 80px;
+  transform: none !important;
+}
+
+.services-slide {
+  display: flex;
+  flex-direction: column; /* 🔑 stack services inside */
+  gap: 80px;
+  align-items: center;
+}
+
+/* Card layout stays SAME */
+.service {
+  display: flex;
+  align-items: center;
+}
+.services-arrows {
+  display: none;
 }

@@ -111,7 +111,7 @@ body {
 }
 
 .footer-bar h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 10px;
   text-align: center;
@@ -129,13 +129,15 @@ body {
 .footer-col {
   flex: 1;
   text-align: center;
+  margin-bottom: 10px;
 }
 .footer-col a {
   text-decoration: none;
+  font-size: 16px;
   color: #ffffff;
 }
 .footer-col a img {
-  margin-right: 5px;
+  /* margin-right: 2px; */
   vertical-align: middle;
   width: 20px;
   height: 20px;

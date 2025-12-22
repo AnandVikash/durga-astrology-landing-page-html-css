@@ -251,74 +251,7 @@
       </div>
     </div>
   </section>
-  <script>
-    const servicesTrack = document.getElementById("servicesTrack");
-    let slides = document.querySelectorAll(".services-slide");
 
-    let index = 1;
-    let interval;
-    const delay = 3500;
-    let isTransitioning = false;
-
-    // Clone slides
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
-
-    servicesTrack.appendChild(firstClone);
-    servicesTrack.insertBefore(lastClone, slides[0]);
-
-    slides = document.querySelectorAll(".services-slide");
-
-    servicesTrack.style.transform = `translateX(-100%)`;
-
-    function move() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      servicesTrack.style.transition = "transform 0.6s ease";
-      servicesTrack.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextServices() {
-      if (index >= slides.length - 1) return;
-      index++;
-      move();
-    }
-
-    function prevServices() {
-      if (index <= 0) return;
-      index--;
-      move();
-    }
-
-    servicesTrack.addEventListener("transitionend", () => {
-      isTransitioning = false;
-
-      if (slides[index] === firstClone) {
-        servicesTrack.style.transition = "none";
-        index = 1;
-        servicesTrack.style.transform = `translateX(-${index * 100}%)`;
-      }
-
-      if (slides[index] === lastClone) {
-        servicesTrack.style.transition = "none";
-        index = slides.length - 2;
-        servicesTrack.style.transform = `translateX(-${index * 100}%)`;
-      }
-    });
-
-    function startAuto() {
-      interval = setInterval(nextServices, delay);
-    }
-
-    function stopAuto() {
-      clearInterval(interval);
-    }
-
-    servicesTrack.addEventListener("mouseenter", stopAuto);
-    servicesTrack.addEventListener("mouseleave", startAuto);
-
-    startAuto();
-  </script>
 
   <section class="results" id="results">
     <div class="results-overlay"></div>
@@ -423,55 +356,7 @@
       </div>
     </div>
   </section>
-  <script>
-    const specialTrack = document.getElementById("specialTrack");
-    const specialCards = document.querySelectorAll(".special-card");
-    let specialIndex = 0;
-    let specialInterval;
 
-    function visibleSpecial() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 1024) return 2;
-      return 4;
-    }
-
-    function updateSpecial() {
-      specialTrack.style.transform = `translateX(-${(specialIndex * 100) / visibleSpecial()
-        }%)`;
-    }
-
-    function next() {
-      if (specialIndex < specialCards.length - visibleSpecial()) {
-        specialIndex++;
-      } else {
-        specialIndex = 0;
-      }
-      updateSpecial();
-    }
-
-    function prev() {
-      if (specialIndex > 0) {
-        specialIndex--;
-      } else {
-        specialIndex = specialCards.length - visibleSpecial();
-      }
-      updateSpecial();
-    }
-
-    function startSpecialAuto() {
-      specialInterval = setInterval(next, 3500);
-    }
-
-    function stopSpecialAuto() {
-      clearInterval(specialInterval);
-    }
-
-    specialTrack.addEventListener("mouseenter", stopSpecialAuto);
-    specialTrack.addEventListener("mouseleave", startSpecialAuto);
-    window.addEventListener("resize", updateSpecial);
-
-    startSpecialAuto();
-  </script>
 
   <section class="testimonials" id="testimonals">
     <h2 class="testimonials-title">Client Testimonials</h2>
@@ -566,77 +451,7 @@
       </div>
     </div>
   </section>
-  <script>
-    (function () {
-      const track = document.getElementById("testimonialTrack");
-      if (!track) return;
 
-      let slides = Array.from(track.children);
-      const slideCount = slides.length;
-      let index = 0;
-      let auto;
-      const delay = 3000;
-
-      function visible() {
-        if (window.innerWidth <= 600) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
-      }
-
-      /* CLONE FOR INFINITE */
-      slides.forEach((slide) => {
-        const clone = slide.cloneNode(true);
-        track.appendChild(clone);
-      });
-
-      slides = Array.from(track.children);
-
-      function move(animate = true) {
-        track.style.transition = animate ? "transform 0.6s ease" : "none";
-        track.style.transform = `translateX(-${(index * 100) / visible()}%)`;
-      }
-
-      function next() {
-        index++;
-        move(true);
-
-        if (index >= slideCount) {
-          setTimeout(() => {
-            index = 0;
-            move(false);
-          }, 600);
-        }
-      }
-
-      function prev() {
-        if (index === 0) {
-          index = slideCount;
-          move(false);
-        }
-        index--;
-        move(true);
-      }
-
-      window.nextTestimonial = next;
-      window.prevTestimonial = prev;
-
-      function startAuto() {
-        auto = setInterval(next, delay);
-      }
-
-      function stopAuto() {
-        clearInterval(auto);
-      }
-
-      track.addEventListener("mouseenter", stopAuto);
-      track.addEventListener("mouseleave", startAuto);
-
-      window.addEventListener("resize", () => move(false));
-
-      move(false);
-      startAuto();
-    })();
-  </script>
 
   <!-- 
   <section class="video-testimonials">
@@ -877,20 +692,25 @@
       <div class="footer-col">
         <h3>Nagarbhavi</h3>
         <p>Near BDA Complex<br>Bangalore</p>
-        <a href="tel:+919902015004"><img src="./assets/icons/phone.png" alt="Astrologer" />+91 99020 15004</a>
+
       </div>
 
       <div class="footer-col">
         <h3>Jayanagar 4th Block</h3>
         <p>Janata Market<br>Near Vijaya College, Bangalore</p>
-        <a href="tel:+919902015004"><img src="./assets/icons/phone.png" alt="Astrologer" />+91 99020 15004</a>
+
       </div>
 
       <div class="footer-col">
         <h3>Indiranagar</h3>
         <p>KFC Signal, CMH Road<br>Bangalore</p>
-        <a href="tel:+919902015004"><img src="./assets/icons/phone.png" alt="Astrologer" />+91 99020 15004</a>
+
       </div>
+    </div>
+    <div class="footer-col footer-call">
+
+      <a href="tel:+919902015004">Reach us on :<img src="./assets/icons/phone.png" alt="Astrologer" /> +91 99020
+        15004</a>
     </div>
 
     <div class="footer-copy">
@@ -930,55 +750,7 @@
       });
     });
   </script>
-  <script>
-    function enableSwipe(track, nextFn, prevFn) {
-      let startX = 0;
-      let isDown = false;
 
-      track.style.cursor = "grab";
-
-      track.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.clientX;
-        track.style.cursor = "grabbing";
-      });
-
-      window.addEventListener("mouseup", (e) => {
-        if (!isDown) return;
-        const diff = e.clientX - startX;
-        if (diff < -50) nextFn();
-        if (diff > 50) prevFn();
-        isDown = false;
-        track.style.cursor = "grab";
-      });
-
-      // Touch support
-      track.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-      });
-
-      track.addEventListener("touchend", (e) => {
-        const diff = e.changedTouches[0].clientX - startX;
-        if (diff < -50) nextFn();
-        if (diff > 50) prevFn();
-      });
-    }
-
-    // ENABLE SWIPE
-    enableSwipe(
-      document.getElementById("servicesTrack"),
-      nextServices,
-      prevServices
-    );
-
-    enableSwipe(document.getElementById("specialTrack"), next, prev);
-
-    enableSwipe(
-      document.getElementById("testimonialTrack"),
-      nextTestimonial,
-      prevTestimonial
-    );
-  </script>
 </body>
 
 </html>
