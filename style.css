@@ -628,6 +628,57 @@ html {
   transition: transform 0.4s ease;
 }
 
+/* 1. Create the overlay */
+.special-card::before {
+  content: "";
+  position: absolute;
+
+  /* Match the image positioning (based on your padding) */
+  top: 8px;
+  left: 12px;
+  right: 12px;
+  height: 400px;
+
+  /* Dark gradient from bottom to top so text is readable */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+
+  /* Match image styling exactly */
+  border-radius: 16px;
+  z-index: 1; /* Sits on top of image */
+  pointer-events: none; /* Allows clicks to pass through to the image/link */
+
+  /* Match the existing Image Transition & Transform exactly */
+  transform: scale(0.96);
+  transition: transform 0.4s ease;
+}
+
+/* 2. Animate the overlay on hover (Sync with Image) */
+.special-card:hover::before {
+  transform: scale(1) translateY(4px);
+  /* Optional: Make overlay darker on hover if desired */
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%); */
+}
+
+/* 3. Bring text to the front */
+.card-text {
+  z-index: 2; /* Ensures text sits on top of the overlay */
+}
+.card-text-call {
+  margin-top: 10px;
+  display: inline-block;
+  background: #d4af37;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .card-text {
   position: absolute;
   left: 0;
@@ -1166,12 +1217,6 @@ html {
   transition: transform 0.3s ease;
 }
 
-.call-btn {
-  bottom: 90px;
-
-  background-color: #ff9500;
-}
-
 .whatsapp-btn img {
   width: 60%;
   height: 60%;
@@ -1218,6 +1263,43 @@ html {
 .special-track {
   transition: transform 0.6s ease;
 }
+.call-number {
+  position: absolute;
+  right: 70px; /* distance from button */
+  bottom: 50%;
+  transform: translateY(50%);
+  background: #fff;
+  border: 2px solid #d4af37; /* red border like image */
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+  border-radius: 4px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+/* Speech bubble arrow */
+.call-number::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #d4af37;
+}
+
+/* Show on hover */
+.call-btn:hover .call-number {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* --- Mobile Menu Logic --- */
 /* ===== MOBILE MENU ===== */
 .menu-toggle {
