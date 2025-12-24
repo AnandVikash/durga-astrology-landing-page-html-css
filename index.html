@@ -25,6 +25,15 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NS2F767F');</script>
   <!-- End Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17806329276">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17806329276');
+  </script>
 </head>
 
 <body>
@@ -92,12 +101,12 @@
         <h3>Book a Free Consultation</h3>
 
         <form method="POST" action="https://mail.digikit.in/forms/astro/send.php">
-          <input type="text" placeholder="Full Name" required />
-          <input type="tel" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}"
+          <input type="text" placeholder="Full Name" name="name" required />
+          <input type="tel" placeholder="Phone Number" name="phone" maxlength="10" pattern="[0-9]{10}"
             oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)" required />
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Service Required" required />
-          <textarea placeholder="Tell us about your requirements..." required></textarea>
+          <input type="email" placeholder="Email" name="email" required />
+          <input type="text" placeholder="Service Required" name="service" required />
+          <textarea placeholder="Tell us about your requirements..." name="message" required></textarea>
           <button type="submit">Book a Free Consultation</button>
         </form>
       </div>
@@ -110,12 +119,12 @@
       <h3>Book a Free Consultation</h3>
 
       <form method="POST" action="https://mail.digikit.in/forms/astro/send.php">
-        <input type="text" placeholder="Full Name" required />
-        <input type="tel" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}"
+        <input type="text" placeholder="Full Name" name="name" required />
+        <input type="tel" placeholder="Phone Number" name="phone" maxlength="10" pattern="[0-9]{10}"
           oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,10)" required />
-        <input type="email" placeholder="Email" required />
-        <input type="text" placeholder="Service Required" required />
-        <textarea placeholder="Tell us about your requirements..." required></textarea>
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="text" placeholder="Service Required" name="service" required />
+        <textarea placeholder="Tell us about your requirements..." name="message" required></textarea>
         <button type="submit">Book a Free Consultation</button>
       </form>
     </div>
